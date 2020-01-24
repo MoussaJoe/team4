@@ -1,4 +1,4 @@
-package com.example.dailyuadb;
+package com.example.dailyuadb.Controller;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dailyuadb.R;
+import com.example.dailyuadb.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Inscription extends AppCompatActivity implements View.OnClickListener {
@@ -35,7 +36,8 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
         editTextConfirm = findViewById(R.id.confirm);
-        //progressBar.setVisibility(View.GONE);
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -97,7 +99,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
             editTextConfirm.requestFocus();
             return;
         }
-        // progressBar.setVisibility(View.VISIBLE);
+         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
         {
             @Override
