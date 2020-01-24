@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">DailyUADB</string>
+
+    <string name="input_error_nom">name required</string>
+    <string name="input_error_prenom">prenom required</string>
+    <string name="input_error_carte">Numero de Carte required</string>
+    <string name="input_error_email">email required</string>
+    <string name="input_error_password">password required</string>
+    <string name="input_error_confirm">confirm password required</string>
+    <string name="input_error_confirm2">Mots de passe non conforme</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="input_error_email_invalid">enter a valid email</string>
+
+
 </resources>
