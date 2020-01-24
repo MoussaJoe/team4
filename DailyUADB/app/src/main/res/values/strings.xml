@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DailyUADB</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="input_error_email">email required</string>
+    <string name="input_error_password">password required</string>
+    <string name="input_error_password_length">password should be at least 4 characters long</string>
+    <string name="authentification_success">Authentification Successfully</string>
+    <string name="input_error_email_invalid">email invalide!!</string>
 </resources>
