@@ -1,4 +1,4 @@
-package com.example.dailyuadb;
+package com.example.dailyuadb.Model;
 
 public class User {
     public String nom;
@@ -17,4 +17,6 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    
 }
