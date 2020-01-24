@@ -4,18 +4,16 @@ public class User {
 
     String nom;
     String prenom;
-    String adresse;
     String email;
     String numCarte;
-    String telephone;
+    String password;
 
-    public User(String nom, String prenom, String adresse, String email,String numCarte, String telephone) {
+    public User(String nom, String prenom, String email,String numCarte,String password) {
         this.nom = nom;
         this.prenom = prenom;
-        this.adresse = adresse;
         this.email = email;
-        this.telephone = telephone;
         this.numCarte = numCarte;
+        this.password = password;
     }
 
     public String getNom() {
@@ -34,28 +32,12 @@ public class User {
         this.prenom = prenom;
     }
 
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
     }
 
     public String getNumCarte() {
@@ -65,4 +47,5 @@ public class User {
     public void setNumCarte(String numCarte) {
         this.numCarte = numCarte;
     }
+
 }

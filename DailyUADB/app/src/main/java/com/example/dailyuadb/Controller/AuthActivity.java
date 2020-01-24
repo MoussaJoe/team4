@@ -3,6 +3,7 @@ package com.example.dailyuadb.Controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -22,17 +23,18 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     private Button connectionBtn;
 
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        editTextEmail = findViewById(R.id.auth_activity_email);
-        editTextPassword = findViewById(R.id.auth_activity_password);
+    //    editTextEmail = findViewById(R.id.auth_activity_email);
+   //     editTextPassword = findViewById(R.id.auth_activity_password);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.auth_activity_connectio_btn).setOnClickListener(this);
+       // findViewById(R.id.auth_activity_connectio_btn).setOnClickListener(this);
 
     }
 
@@ -84,9 +86,17 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.auth_activity_connectio_btn:
+            /*case R.id.auth_activity_connectio_btn:
                 authUser();
-                break;
+                break;*/
         }
+        Button btnInscription= findViewById(R.id.idInscription);
+        btnInscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),Inscription.class);
+                startActivity(i);
+            }
+        });
     }
 }
