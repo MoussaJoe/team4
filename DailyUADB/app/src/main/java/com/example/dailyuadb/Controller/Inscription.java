@@ -117,8 +117,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                             email,
                             password
                     );
-                   // Toast.makeText(getApplicationContext(), "entre", Toast.LENGTH_LONG).show();
-                    Log.i("FIREBASE", "onComplete: ");
+
 
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -131,14 +130,18 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                                 Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
                             }
                             else {
-                                   // Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                }
+                                    Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    progressBar.setVisibility(View.GONE);
+
+                            }
                             }
 
                     });
 
                 } else {
                     Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+
                 }
             }
         });
