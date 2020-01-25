@@ -1,22 +1,19 @@
 package com.example.dailyuadb.Model;
 
 public class User {
-    public String nom;
-    public String prenom;
-    public String numCarte;
-    public String email;
-    public String password;
 
-    public User() {
-    }
+    String nom;
+    String prenom;
+    String email;
+    String numCarte;
+    String password;
 
-    public User(String nom, String prenom, String numCarte, String email, String password) {
+    public User(String nom, String prenom, String email,String numCarte,String password) {
         this.nom = nom;
         this.prenom = prenom;
-        this.numCarte = numCarte;
         this.email = email;
+        this.numCarte = numCarte;
         this.password = password;
     }
-
-
+    
 }
