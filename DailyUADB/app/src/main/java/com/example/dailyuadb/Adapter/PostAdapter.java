@@ -80,7 +80,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         public ViewHolder(View itemView){
             super(itemView);
 
-            image_profils = itemView.findViewById(R.id.image_profile);
+            image_profils = itemView.findViewById(R.id.image_profils);
             post_image = itemView.findViewById(R.id.post_image);
             like = itemView.findViewById(R.id.like);
             comment = itemView.findViewById(R.id.comment);
@@ -103,7 +103,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-                Log.i("erreur_load_img" ,"Error "+user.getImageUrl()+" image_profils"+image_profils);
+                //Log.i("erreur_load_img" ,"Error "+user.getImageUrl()+" image_profils"+image_profils);
                 Glide.with(mContext).load(user.getImageUrl()).into(image_profils);
                 username.setText(user.getPrenom()+" "+user.getNom());
                 publisher.setText(user.getPrenom()+" "+user.getNom());
