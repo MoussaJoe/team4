@@ -1,5 +1,6 @@
 package com.example.dailyuadb.Controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dailyuadb.MainActivity;
 import com.example.dailyuadb.R;
 import com.example.dailyuadb.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -127,7 +129,8 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                Toast.makeText(Inscription.this, "Inscription  réussie !!!", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
                             else {
                                     Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
