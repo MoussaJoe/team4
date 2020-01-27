@@ -100,7 +100,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
             return;
         }
          progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
+         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
         {
             @Override
 
@@ -128,6 +128,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                // page d'acceuil place
                             }
                             else {
                                     Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
