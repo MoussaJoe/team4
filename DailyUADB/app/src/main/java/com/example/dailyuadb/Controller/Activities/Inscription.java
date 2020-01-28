@@ -52,6 +52,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
         final String confirm = editTextConfirm.getText().toString().trim();
+        final String profil="Etudiant";
 
         if (nom.isEmpty()) {
             editTextNom.setError(getString(R.string.input_error_nom));
@@ -115,7 +116,8 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                             prenom,
                             carte,
                             email,
-                            password
+                            password,
+                            profil
                     );
 
 

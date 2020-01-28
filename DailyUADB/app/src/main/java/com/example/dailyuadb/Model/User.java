@@ -8,13 +8,15 @@ public class User {
     String numCarte;
     String password;
     String imageUrl;
+    String profil;
 
-    public User(String nom, String prenom, String email,String numCarte,String password) {
+    public User(String nom, String prenom, String email,String numCarte,String password,String profil) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
+        this.profil=profil;
     }
 
     public User() {
@@ -76,5 +78,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfil() {
+        return profil;
+    }
+
+    public void setProfil(String profil) {
+        this.profil = profil;
     }
 }
