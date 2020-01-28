@@ -1,7 +1,7 @@
-package com.example.dailyuadb.Controller;
+package com.example.dailyuadb.Controller.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -128,6 +128,8 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
+                                startActivity(intent);
                             }
                             else {
                                     Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();

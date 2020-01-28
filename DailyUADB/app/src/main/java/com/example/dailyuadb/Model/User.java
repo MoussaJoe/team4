@@ -7,6 +7,7 @@ public class User {
     String email;
     String numCarte;
     String password;
+    String imageUrl;
 
     public User(String nom, String prenom, String email,String numCarte,String password) {
         this.nom = nom;
@@ -14,6 +15,27 @@ public class User {
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
+    }
+
+    public User() {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.numCarte = numCarte;
+        this.password = password;
+        this.imageUrl = imageUrl;
+    }
+
+    public User(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getNom() {

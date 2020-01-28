@@ -1,4 +1,4 @@
-package com.example.dailyuadb.Controller;
+package com.example.dailyuadb.Controller.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,7 +71,8 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    // page d'acceuil place
+                    Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
