@@ -2,38 +2,35 @@ package com.example.dailyuadb;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.NotificationFragment;
 import com.example.dailyuadb.Fragment.ProfileFragment;
-import com.example.dailyuadb.Fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class DelegueActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Fragment selectedFrangment = null;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_delegue);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_delegue);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelected);
 
         /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new HomeFragment()).commit();*/
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new SearchFragment()).commit();
-
+                new SearchFragment()).commit();*/
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener  navigationItemSelected =
@@ -48,13 +45,14 @@ public class MainActivity extends AppCompatActivity {
                             selectedFrangment = new HomeFragment();
                             break;
 
-                        case R.id.nav_search:
-                            selectedFrangment = new SearchFragment();
+                        case R.id.nav_menu_resto:
+                            selectedFrangment = null;
+                            startActivity(new Intent(DelegueActivity.this, MenuRestoActivity.class));
                             break;
 
                         case R.id.nav_add:
                             selectedFrangment = null;
-                            startActivity(new Intent(MainActivity.this, PostActivity.class));
+                            startActivity(new Intent(DelegueActivity.this, PostActivity.class));
                             break;
 
                         case R.id.nav_heart:
