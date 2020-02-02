@@ -2,6 +2,7 @@ package com.example.dailyuadb.Model;
 
 public class User {
 
+    String id;
     String nom;
     String prenom;
     String email;
@@ -10,22 +11,19 @@ public class User {
     String imageUrl;
     String profil;
 
-    public User(String nom, String prenom, String email,String numCarte,String password,String profil) {
+    public User(String id,String nom, String prenom, String email,String numCarte,String password,String imageUrl,String profil) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
+        this.imageUrl=imageUrl;
+        this.id=id;
         this.profil=profil;
     }
 
     public User() {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.numCarte = numCarte;
-        this.password = password;
-        this.imageUrl = imageUrl;
+
     }
 
     public User(String imageUrl) {
@@ -86,5 +84,13 @@ public class User {
 
     public void setProfil(String profil) {
         this.profil = profil;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

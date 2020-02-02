@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dailyuadb.Controller.Adapter.PostAdapter;
-import com.example.dailyuadb.Controller.Adapter.PostAdapter;
 import com.example.dailyuadb.Model.Post;
 import com.example.dailyuadb.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -52,11 +52,41 @@ public class HomeFragment extends Fragment {
 
         //Pour lire les poste depuis FireBase
         readPost();
+        //checkFollowing();
         return view;
     }
 
+    private void checkFollowing(){
+        post_a_afficher= new ArrayList<>();
+
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Follow")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child("Following");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                post_a_afficher.clear();
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                    post_a_afficher.add(snapshot.getKey());
+                }
+
+                //readPost();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+
     private void readPost(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+        System.out.println("uid "+reference.getKey());
+        System.out.println("uid2 "+reference.child("postid"));
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -65,9 +95,13 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Post post = snapshot.getValue(Post.class);
                     postList.add(post);
-                    /*for (String id : post_a_afficher
-                         ) {
-                        postList.add(post);
+                    System.out.println(snapshot.getValue().toString());
+                    /*for (String id : post_a_afficher) {
+                        if(post.getPublisher().equals(id)){
+                            postList.add(post);
+
+                        }
+
                     }*/
                 }
 

@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.dailyuadb"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,6 +20,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -31,6 +32,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.1.0'
     //Library a ajouter
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+   // implémentation ' com.github.bumptech.glide: glide: 4.11.0 '
+   // annotationProcessor ' com.github.bumptech.glide: compilateur: 4.11.0 '
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     /////
@@ -38,5 +41,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

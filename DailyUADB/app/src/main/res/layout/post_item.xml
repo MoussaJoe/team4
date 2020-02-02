@@ -33,10 +33,10 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/post_image"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="match_parent"
+            android:layout_height="272dp"
+            android:src="@mipmap/ic_launcher" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,10 +44,10 @@
             android:padding="8dp">
 
             <ImageView
+                android:id="@+id/like"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/like"
-                android:src="@drawable/ic_like"/>
+                android:src="@drawable/ic_like" />
 
             <ImageView
                 android:layout_width="30dp"

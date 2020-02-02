@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.dailyuadb.Controller.Adapter.PostAdapter;
 import com.example.dailyuadb.Controller.Fragments.HomeFragment;
 import com.example.dailyuadb.Controller.Fragments.NotificationFragment;
 import com.example.dailyuadb.Controller.Fragments.ProfileFragment;
@@ -44,6 +45,8 @@ public class AcceuilActivity extends AppCompatActivity {
                         case R.id.nav_home:
                             //selectedFrangment = new HomeFragment();
                             selectedFrangment = new HomeFragment();
+                            //selectedFrangment = null;
+                            //startActivity(new Intent(AcceuilActivity.this, PostAdapter.class));
                             break;
 
                         case R.id.nav_search:
