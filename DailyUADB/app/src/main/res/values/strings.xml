@@ -1,4 +1,49 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name">Daily UADB</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="input_error_email">Le champs E-mail est obligatoire</string>
+    <string name="input_error_password">Le champs mot de passe est obligatoire</string>
+    <string name="input_error_password_length">Le mot de passe doit contenir au moins 4 caractères</string>
+    <string name="authentification_success">Authentification réussie</string>
+    <string name="input_error_email_invalid">E-mail invalide. Veuillez revoir votre adresse mail</string>
+
+    <!--Validation  Menu-->
+    <string name="input_error_dejeuner">Le champs Nom du plat déjeuner est obligatoire</string>
+    <string name="input_error_diner">Le champs Nom du plat dîner est obligatoire</string>
+
+    <!--Fin Validation  Menu-->
+
+
+    <string name="input_error_nom">Le champs nom est obligatoire</string>
+    <string name="input_error_prenom">Le champs prénom est obligatoire</string>
+    <string name="input_error_carte">Le numero de carte est obligatoire</string>
+    <string name="input_error_confirm">Confirmation mot de passse requis</string>
+    <string name="input_error_confirm2">Les mots de passe ne sont pas conforme</string>
+    <string name="registration_success">Votre compte a été créé avec success</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_menu_resto">MenuRestoActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- TODO: Remove or change this placeholder text
+    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+
+    <!--Liste des jours de la semaine -->
+    <string-array name="liste_jour">
+        <!--<item>Sélectionner un jour</item>-->
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
+    </string-array>
+=======
     <string name="app_name">DailyUADB</string>
     <string name="email">email</string>
     <string name="password">password</string>
@@ -14,6 +59,7 @@
     <string name="input_error_confirm">confirm password required</string>
     <string name="input_error_confirm2">Mots de passe non conforme</string>
     <string name="registration_success">Registered Successfully</string>
+>>>>>>> origin/master
 
 
 </resources>

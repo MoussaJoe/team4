@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
+    tools:context=".PostActivity">
+=======
     tools:context=".Controller.Activities.PostActivity">
+>>>>>>> origin/master
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

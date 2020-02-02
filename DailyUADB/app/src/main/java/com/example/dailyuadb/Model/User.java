@@ -3,23 +3,34 @@ package com.example.dailyuadb.Model;
 public class User {
 
     String id;
-    String nom;
-    String prenom;
-    String email;
-    String numCarte;
-    String password;
-    String imageUrl;
-    String profil;
+    private String nom;
+    private String prenom;
+    private String email;
+    private String numCarte;
+    private String password;
+    private String imageUrl;
+    private String profils_user;
+    private String profil;
 
-    public User(String id,String nom, String prenom, String email,String numCarte,String password,String imageUrl,String profil) {
+    public User(String nom, String prenom, String email, String numCarte, String password, String profil) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
-        this.imageUrl=imageUrl;
-        this.id=id;
-        this.profil=profil;
+        this.profil = profil;
+    }
+
+    public User(String id, String nom, String prenom, String email, String numCarte, String password, String imageUrl, String profil) {
+
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.numCarte = numCarte;
+        this.password = password;
+        this.imageUrl = imageUrl;
+        this.id = id;
+        this.profil = profil;
     }
 
     public User() {
@@ -28,6 +39,14 @@ public class User {
 
     public User(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getProfils_user() {
+        return profils_user;
+    }
+
+    public void setProfils_user(String profils_user) {
+        this.profils_user = profils_user;
     }
 
     public String getImageUrl() {

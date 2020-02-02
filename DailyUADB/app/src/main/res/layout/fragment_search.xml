@@ -8,6 +8,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+<<<<<<< HEAD
         android:id="@+id/bar"
         android:background="@android:color/white" >
     <Toolbar
@@ -35,5 +36,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bar"
         android:id="@+id/recycler_view"/>
+=======
+<<<<<<< HEAD
+        android:id="@+id/searcId"
+        android:text="" />
+=======
+        android:text="Search" />
+>>>>>>> origin/master
+>>>>>>> e67e75770a46c71343fad88a2a260f74d4202db3
 
 </RelativeLayout>
