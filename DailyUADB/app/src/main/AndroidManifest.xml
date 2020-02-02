@@ -12,31 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".Controller.ListeMenuActivity"></activity>
         <activity android:name=".MenuRestoActivity" />
         <activity android:name=".DelegueActivity" />
         <activity android:name=".PostActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Controller.AuthActivity">
-=======
+        <activity android:name=".Controller.AuthActivity"></activity>
         <activity android:name=".Controller.Activities.AcceuilActivity"></activity>
         <activity android:name=".Controller.Activities.AuthActivity">
->>>>>>> origin/master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat" />
         <activity android:name=".Controller.Inscription" />
-=======
         <activity android:name=".Controller.Activities.Inscription"></activity>
->>>>>>> origin/master
     </application>
 
 </manifest>
