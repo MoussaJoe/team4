@@ -6,11 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-<<<<<<< HEAD
     tools:context=".Controller.AuthActivity">
-=======
-    tools:context=".Controller.Activities.AuthActivity">
->>>>>>> origin/master
+
 
     <TextView
         android:layout_width="match_parent"
@@ -36,11 +33,8 @@
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
-<<<<<<< HEAD
         android:hint="Mot de passe"/>
-=======
-        android:hint="mot de passe"/>
->>>>>>> origin/master
+
 
 
     <Button
@@ -51,11 +45,8 @@
         android:padding="30dp"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
-<<<<<<< HEAD
         android:text="Se connecter"/>
-=======
-        android:text="Enter"/>
->>>>>>> origin/master
+
     <TextView
         android:id="@+id/inscription_textView"
         android:layout_width="match_parent"

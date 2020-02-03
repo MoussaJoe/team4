@@ -2,7 +2,7 @@ package com.example.dailyuadb.Model;
 
 public class User {
 
-<<<<<<< HEAD
+    String id;
     private String nom;
     private String prenom;
     private String email;
@@ -10,44 +10,37 @@ public class User {
     private String password;
     private String imageUrl;
     private String profils_user;
+    private String profil;
 
-    public User(String nom, String prenom, String email,String numCarte,String password) {
-=======
-    String nom;
-    String prenom;
-    String email;
-    String numCarte;
-    String password;
-    String imageUrl;
-    String profil;
-
-    public User(String nom, String prenom, String email,String numCarte,String password,String profil) {
->>>>>>> origin/master
+    public User(String nom, String prenom, String email, String numCarte, String password, String profil) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
-<<<<<<< HEAD
-=======
-        this.profil=profil;
->>>>>>> origin/master
+        this.profil = profil;
     }
 
-    public User() {
+    public User(String id, String nom, String prenom, String email, String numCarte, String password, String imageUrl, String profil) {
+
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.numCarte = numCarte;
         this.password = password;
         this.imageUrl = imageUrl;
+        this.id = id;
+        this.profil = profil;
+    }
+
+    public User() {
+
     }
 
     public User(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
-<<<<<<< HEAD
     public String getProfils_user() {
         return profils_user;
     }
@@ -56,8 +49,6 @@ public class User {
         this.profils_user = profils_user;
     }
 
-=======
->>>>>>> origin/master
     public String getImageUrl() {
         return imageUrl;
     }
@@ -98,8 +89,6 @@ public class User {
         this.numCarte = numCarte;
     }
 
-<<<<<<< HEAD
-=======
     public String getPassword() {
         return password;
     }
@@ -115,5 +104,12 @@ public class User {
     public void setProfil(String profil) {
         this.profil = profil;
     }
->>>>>>> origin/master
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -37,7 +37,7 @@ public class SearchFragment extends Fragment {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
-        search = (TextView)container.findViewById(R.id.searcId);
+        search = (TextView)container.findViewById(R.id.search_bar);
         reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.addValueEventListener(new ValueEventListener() {
             @Override

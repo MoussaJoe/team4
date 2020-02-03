@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
-        android:id="@+id/searcId"
+        android:id="@+id/bar"
+        android:background="@android:color/white" >
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white" >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_bar"
+        android:background="@android:color/transparent"
+        android:hint="search..."
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"/>
+    </Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar"
+        android:id="@+id/recycler_view"/>
+        <!--android:id="@+id/searcId"
         android:text="" />
 =======
         android:text="Search" />
 >>>>>>> origin/master
+>>>>>>> e67e75770a46c71343fad88a2a260f74d4202db3-->
 
-</FrameLayout>
+</RelativeLayout>
