@@ -40,7 +40,6 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
         progressBar.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
-
         findViewById(R.id.inscription_valide_btn).setOnClickListener(this);
 
     }

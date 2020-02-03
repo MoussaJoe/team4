@@ -31,7 +31,7 @@ public class AcceuilActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelected);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new HomeFragment()).commit();
+                new SearchFragment()).commit();
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener  navigationItemSelected =
@@ -42,7 +42,6 @@ public class AcceuilActivity extends AppCompatActivity {
 
                     switch (menuItem.getItemId()){
                         case R.id.nav_home:
-                            //selectedFrangment = new HomeFragment();
                             selectedFrangment = new HomeFragment();
                             break;
 

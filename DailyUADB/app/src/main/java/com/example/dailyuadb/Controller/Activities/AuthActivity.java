@@ -2,6 +2,7 @@ package com.example.dailyuadb.Controller.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.dailyuadb.Controller.Fragments.SearchFragment;
 import com.example.dailyuadb.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextEmail, editTextPassword;
     private ProgressBar progressBar;
-
+    Fragment selectedFrangment = null;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         progressBar.setVisibility(View.GONE);
 
         findViewById(R.id.auth_activity_connectio_btn).setOnClickListener(this);
-    findViewById(R.id.inscription_textView).setOnClickListener(this);
+        findViewById(R.id.inscription_textView).setOnClickListener(this);
     }
 
     private void authUser() {
@@ -73,6 +75,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
                     startActivity(intent);
+                    //selectedFrangment = new SearchFragment();
                 }else{
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
