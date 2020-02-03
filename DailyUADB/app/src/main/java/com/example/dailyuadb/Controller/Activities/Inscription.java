@@ -17,13 +17,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Inscription extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editTextNom, editTextPrenom, editTextCarte, editTextEmail, editTextPassword, editTextConfirm;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,29 +111,34 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
             public void onComplete(@NonNull Task< AuthResult > task) {
 
 
-
-                if (task.isSuccessful()) {
-
-                    User user = new User(
-                            nom,
-                            prenom,
-                            carte,
-                            email,
-                            password
-                    );
-
-
-                    FirebaseDatabase.getInstance().getReference("Users")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-
-
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
-                                startActivity(intent);
+                                FirebaseUser firebaseUser= mAuth.getCurrentUser();
+                                String userid= firebaseUser.getUid();
+
+                                reference= FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+                                HashMap<String, Object> hashMap= new HashMap<>();
+                                hashMap.put("id", userid);
+                                hashMap.put("nom", nom);
+                                hashMap.put("prenom", prenom);
+                                hashMap.put("carte", carte);
+                                hashMap.put("email", email);
+                                hashMap.put("password", password);
+                                hashMap.put("imageurl", "https://firebasestorage.googleapis.com/v0/b/dailyuadb.appspot.com/o/avatar.jpg?alt=media&token=9b396a0d-b545-49af-a2c2-a750e7c769c9");
+                                hashMap.put("profil", "Etudiant");
+
+                                reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            Toast.makeText(Inscription.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
+                                            startActivity(intent);
+                                        }
+
+                                    }
+                                });
+
+
                             }
                             else {
                                     Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -139,14 +149,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
 
                     });
 
-                } else {
-                    Toast.makeText(Inscription.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    progressBar.setVisibility(View.GONE);
-
                 }
-            }
-        });
-    }
 
 
     @Override

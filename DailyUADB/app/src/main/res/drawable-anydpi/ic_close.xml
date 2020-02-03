@@ -3,7 +3,11 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24"
+<<<<<<< HEAD
+    android:tint="#000000"
+=======
     android:tint="#FF7F16"
+>>>>>>> origin/master
     android:alpha="0.8">
     <path
         android:fillColor="#FF000000"

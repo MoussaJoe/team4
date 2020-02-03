@@ -8,6 +8,7 @@
     android:gravity="center"
     tools:context=".Controller.Activities.AuthActivity">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,8 +33,7 @@
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
-        android:hint="mot de passe"/>
-
+        android:hint="Mot de passe"/>
 
     <Button
         android:id="@+id/auth_activity_connectio_btn"
@@ -43,7 +43,8 @@
         android:padding="30dp"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
-        android:text="Enter"/>
+        android:text="Se connecter"/>
+
     <TextView
         android:id="@+id/inscription_textView"
         android:layout_width="match_parent"
