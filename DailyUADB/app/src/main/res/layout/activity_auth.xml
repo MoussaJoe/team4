@@ -35,7 +35,6 @@
         android:gravity="center_vertical"
         android:hint="Mot de passe"/>
 
-
     <Button
         android:id="@+id/auth_activity_connectio_btn"
         android:layout_width="wrap_content"

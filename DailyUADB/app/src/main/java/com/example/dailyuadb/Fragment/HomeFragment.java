@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.dailyuadb.Adapter.PostAdapter;
+import com.example.dailyuadb.Controller.Adapter.PostAdapter;
 import com.example.dailyuadb.Model.Post;
 import com.example.dailyuadb.R;
 import com.google.firebase.database.DataSnapshot;

@@ -13,7 +13,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Texte"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,7 +39,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="@string/crop_image_menu_flip_horizontally"
         android:textAlignment="center"
         android:textColor="#FA730C"
         android:textStyle="bold|italic" />
@@ -65,7 +63,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="245dp"
         android:textColor="#FA730C"
-        tools:text="@string/input_error_diner" />
+        android:textStyle="bold|italic" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

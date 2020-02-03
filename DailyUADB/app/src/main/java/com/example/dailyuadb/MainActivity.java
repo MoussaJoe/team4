@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.example.dailyuadb.Controller.ListeMenuActivity;
 import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.NotificationFragment;
 import com.example.dailyuadb.Fragment.ProfileFragment;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();*/
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new SearchFragment()).commit();
+                new HomeFragment()).commit();
 
     }
 
@@ -57,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(MainActivity.this, PostActivity.class));
                             break;
 
-                        case R.id.nav_heart:
-                            selectedFrangment = new NotificationFragment();
+                        case R.id.nav_repas:
+                            selectedFrangment = null;
+                            startActivity(new Intent(MainActivity.this, ListeMenuActivity.class));
                             break;
 
                         case R.id.nav_profile:

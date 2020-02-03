@@ -13,6 +13,7 @@ import com.example.dailyuadb.Controller.Fragments.HomeFragment;
 import com.example.dailyuadb.Controller.Fragments.NotificationFragment;
 import com.example.dailyuadb.Controller.Fragments.ProfileFragment;
 import com.example.dailyuadb.Controller.Fragments.SearchFragment;
+import com.example.dailyuadb.Controller.ListeMenuActivity;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,8 +59,9 @@ public class AcceuilActivity extends AppCompatActivity {
                             startActivity(new Intent(AcceuilActivity.this, PostActivity.class));
                             break;
 
-                        case R.id.nav_heart:
-                            selectedFrangment = new NotificationFragment();
+                        case R.id.nav_repas:
+                            selectedFrangment = null;
+                            startActivity(new Intent(AcceuilActivity.this, ListeMenuActivity.class));
                             break;
 
                         case R.id.nav_profile:

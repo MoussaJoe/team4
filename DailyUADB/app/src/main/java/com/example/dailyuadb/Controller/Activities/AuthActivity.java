@@ -9,17 +9,32 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dailyuadb.DelegueActivity;
+import com.example.dailyuadb.MainActivity;
 import com.example.dailyuadb.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextEmail, editTextPassword;
     private ProgressBar progressBar;
+    DatabaseReference reference;
+    String profile;
+    FirebaseUser user;
+    String uid;
 
     private FirebaseAuth mAuth;
     @Override
@@ -35,7 +50,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         progressBar.setVisibility(View.GONE);
 
         findViewById(R.id.auth_activity_connectio_btn).setOnClickListener(this);
-    findViewById(R.id.inscription_textView).setOnClickListener(this);
+        findViewById(R.id.inscription_textView).setOnClickListener(this);
     }
 
     private void authUser() {
@@ -71,8 +86,29 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(getApplicationContext(), AcceuilActivity.class);
-                    startActivity(intent);
+                    //page d'acceuil place
+                    user = FirebaseAuth.getInstance().getCurrentUser();
+                    uid = user.getUid();
+                    reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            profile = dataSnapshot.child(uid).child("profil").getValue().toString();
+                            //search.setText(profile);
+                            System.out.println("Mon profile depuis Auth"+profile);
+                            if (profile.equalsIgnoreCase("Etudiant")){
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }else if (profile.equalsIgnoreCase("Delegue")){
+
+                                startActivity(new Intent(getApplicationContext(), DelegueActivity.class));
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
                 }else{
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
@@ -94,8 +130,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.inscription_textView:
                 Intent intent = new Intent(getApplicationContext(), Inscription.class);
                 startActivity(intent);
-
-
         }
     }
 }
