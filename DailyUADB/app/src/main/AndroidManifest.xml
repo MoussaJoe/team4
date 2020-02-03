@@ -2,16 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dailyuadb">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Daily UADB"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.AcceuilActivity">
 
-        </activity>
+        <activity android:name=".Controller.Activities.ListeMenuActivity"></activity>
+        <activity android:name=".Controller.Activities.MenuRestoActivity" />
+        <activity android:name=".Controller.Activities.DelegueActivity" />
+        <activity android:name=".Controller.Activities.PostActivity" />
+        <activity android:name=".Controller.Activities.MainActivity" />
         <activity android:name=".Controller.Activities.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.Activities.Inscription"></activity>
+        <activity android:name=".Controller.Activities.AcceuilActivity"></activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.AppCompat" />
+
+        <!--<activity android:name=".Controller.Inscription" />-->
+
     </application>
 
 </manifest>

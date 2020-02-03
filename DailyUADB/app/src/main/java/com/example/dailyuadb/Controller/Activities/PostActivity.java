@@ -1,5 +1,9 @@
 package com.example.dailyuadb.Controller.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -11,10 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dailyuadb.R;
 import com.google.android.gms.tasks.Continuation;
@@ -35,8 +35,8 @@ public class PostActivity extends AppCompatActivity {
 
     Uri imageUri;
     String myUrl = "";
-    StorageTask uploadTask;
     StorageReference storageReference;
+    StorageTask uploadTask;
 
     ImageView close, image_added;
     TextView post;
@@ -57,7 +57,7 @@ public class PostActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startActivity(new Intent(PostActivity.this, AcceuilActivity.class));
+                startActivity(new Intent(PostActivity.this, MainActivity.class));
                 finish();
             }
         });
@@ -119,7 +119,7 @@ public class PostActivity extends AppCompatActivity {
 
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(PostActivity.this, AcceuilActivity.class));
+                        startActivity(new Intent(PostActivity.this, MainActivity.class));
                         finish();
                     }else {
                         Toast.makeText(PostActivity.this, "Erreur", Toast.LENGTH_SHORT).show();
@@ -149,7 +149,7 @@ public class PostActivity extends AppCompatActivity {
 
             progressDialog.dismiss();
 
-            startActivity(new Intent(PostActivity.this, AcceuilActivity.class));
+            startActivity(new Intent(PostActivity.this, MainActivity.class));
             finish();
         }
     }
@@ -166,7 +166,7 @@ public class PostActivity extends AppCompatActivity {
             image_added.setImageURI(imageUri);
         }else{
             Toast.makeText(this, "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(PostActivity.this, AcceuilActivity.class));
+            startActivity(new Intent(PostActivity.this, MainActivity.class));
             finish();
         }
     }

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Controller.Fragments.SearchFragment">
+    tools:context=".Fragment.SearchFragment">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -66,7 +66,7 @@
         android:id="@+id/idee_discussion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="De quoi souhaitez-vous discuter?"
+        android:hint="Quelle pensée voulez-vous partager?"
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="50dp"/>
 </LinearLayout>

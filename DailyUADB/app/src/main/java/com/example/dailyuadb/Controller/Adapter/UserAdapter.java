@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dailyuadb.Controller.Fragments.ProfileFragment;
+import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.Model.User;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;

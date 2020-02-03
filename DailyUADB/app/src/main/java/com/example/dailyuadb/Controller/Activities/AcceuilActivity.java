@@ -8,12 +8,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.dailyuadb.Controller.Adapter.PostAdapter;
-import com.example.dailyuadb.Controller.Fragments.HomeFragment;
-import com.example.dailyuadb.Controller.Fragments.NotificationFragment;
-import com.example.dailyuadb.Controller.Fragments.ProfileFragment;
-import com.example.dailyuadb.Controller.Fragments.SearchFragment;
-import com.example.dailyuadb.Controller.ListeMenuActivity;
+import com.example.dailyuadb.Fragment.HomeFragment;
+import com.example.dailyuadb.Fragment.ProfileFragment;
+import com.example.dailyuadb.Fragment.SearchFragment;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +30,7 @@ public class AcceuilActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelected);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new SearchFragment()).commit();
+                new com.example.dailyuadb.Fragment.HomeFragment()).commit();
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener  navigationItemSelected =
@@ -58,7 +55,7 @@ public class AcceuilActivity extends AppCompatActivity {
                             startActivity(new Intent(AcceuilActivity.this, PostActivity.class));
                             break;
 
-                        case R.id.nav_repas:
+                        case R.id.nav_menu_resto:
                             selectedFrangment = null;
                             startActivity(new Intent(AcceuilActivity.this, ListeMenuActivity.class));
                             break;
