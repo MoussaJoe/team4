@@ -100,7 +100,7 @@ public class ListeMenuActivity extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 int numChoix = (int) rating;
                 String message = "";
-                nbre_etoile = ratingBar.getNumStars();
+                nbre_etoile = ratingBar.getRating()   ;
 
                 switch (numChoix){
                     case 1 :
