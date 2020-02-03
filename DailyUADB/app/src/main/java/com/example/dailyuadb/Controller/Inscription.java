@@ -113,11 +113,11 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                 if (task.isSuccessful()) {
 
                     User user = new User(
-                            nom,
+            /*                nom,
                             prenom,
                             carte,
                             email,
-                            password
+                            password  */
                     );
 
 
