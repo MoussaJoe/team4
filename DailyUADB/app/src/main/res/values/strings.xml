@@ -42,6 +42,7 @@
         <item>Samedi</item>
         <item>Dimanche</item>
     </string-array>
+
     <!--<string name="app_name">DailyUADB</string>
     <string name="email">email</string>
     <string name="password">password</string>

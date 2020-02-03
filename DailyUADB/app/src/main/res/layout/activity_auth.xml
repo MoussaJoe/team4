@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Controller.AuthActivity">
+    tools:context=".Controller.Activities.AuthActivity">
 
 
     <TextView
@@ -34,8 +34,6 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:hint="Mot de passe"/>
-
-
 
     <Button
         android:id="@+id/auth_activity_connectio_btn"

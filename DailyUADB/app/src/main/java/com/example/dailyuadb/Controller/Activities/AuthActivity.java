@@ -9,11 +9,8 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dailyuadb.DelegueActivity;
-import com.example.dailyuadb.MainActivity;
 import com.example.dailyuadb.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,8 +22,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextEmail, editTextPassword;

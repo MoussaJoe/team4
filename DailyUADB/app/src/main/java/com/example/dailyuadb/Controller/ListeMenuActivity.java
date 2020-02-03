@@ -100,7 +100,8 @@ public class ListeMenuActivity extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 int numChoix = (int) rating;
                 String message = "";
-                nbre_etoile = ratingBar.getRating()   ;
+
+                nbre_etoile = ratingBar.getRating();
 
                 switch (numChoix){
                     case 1 :
@@ -151,10 +152,12 @@ public class ListeMenuActivity extends AppCompatActivity {
                         }
                         hashMap.put("id_publisher", id);
                         hashMap.put("note_menu", nbre_etoile);
+                        System.out.println("type repas "+ typeRepas+" et le menu est "+nom_menu_dejeuner+" ou "+nom_menu_diner);
+                        System.out.println("nbre etoile "+nbre_etoile);
 
                         referenceNoteMenu.child(noteMenusId).setValue(hashMap);
                         if (dataSnapshot.child(uid).child("profil").getValue().toString().equalsIgnoreCase("Etudiant")){
-                            startActivity(new Intent(getApplicationContext(), AcceuilActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             Toast.makeText(ListeMenuActivity.this, "Merci d'avoir noter le repas!! A bientot", Toast.LENGTH_LONG).show();
                         }else if (dataSnapshot.child(uid).child("profil").getValue().toString().equalsIgnoreCase("Delegue")){
                             startActivity(new Intent(getApplicationContext(), DelegueActivity.class));
