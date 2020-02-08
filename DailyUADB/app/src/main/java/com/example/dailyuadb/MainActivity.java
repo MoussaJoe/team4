@@ -7,9 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.dailyuadb.Controller.ListeMenuActivity;
+import com.example.dailyuadb.Controller.Activities.ListeMenuActivity;
+import com.example.dailyuadb.Controller.Activities.PostActivity;
 import com.example.dailyuadb.Fragment.HomeFragment;
-import com.example.dailyuadb.Fragment.NotificationFragment;
 import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.Fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

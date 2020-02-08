@@ -57,6 +57,10 @@ public class DelegueActivity extends AppCompatActivity {
                             startActivity(new Intent(DelegueActivity.this, PostActivity.class));
                             break;
 
+                        case R.id.nav_campus:
+                            selectedFrangment = null;
+                            startActivity(new Intent(DelegueActivity.this, Activites_Chambre.class));
+
                         case R.id.nav_search:
                             selectedFrangment = new SearchFragment();
                             break;
