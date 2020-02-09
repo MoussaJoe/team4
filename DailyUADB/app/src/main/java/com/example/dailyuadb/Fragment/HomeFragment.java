@@ -32,8 +32,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
     private List<Post> postList;
-    private List<String> post_a_afficher;
-    private DatabaseReference reference ;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
