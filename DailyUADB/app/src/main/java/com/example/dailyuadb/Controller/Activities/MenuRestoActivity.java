@@ -2,6 +2,7 @@ package com.example.dailyuadb.Controller.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.dailyuadb.Controller.Activities.ListeMenuActivity;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class MenuRestoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -49,9 +53,9 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_resto);
 
-        id_jour = (Spinner) findViewById(R.id.id_jour);
-        diner_id = (EditText) findViewById(R.id.diner_id);
-        dejeuner_id = (EditText) findViewById(R.id.dejeuner_id);
+        id_jour =  findViewById(R.id.id_jour);
+        diner_id = findViewById(R.id.diner_id);
+        dejeuner_id = findViewById(R.id.dejeuner_id);
         ArrayAdapter<CharSequence> adapter;
         adapter = ArrayAdapter.createFromResource( this, R.array.liste_jour, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -122,23 +126,22 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
                         id = (String) dataSnapshot.child(uid).child("id").getValue();
                         email = (String) dataSnapshot.child(uid).child("email").getValue();
 
-                            System.out.println("Ok le menu est bon");
-                            referenceMenu = FirebaseDatabase.getInstance().getReference("Menus");
-                            String menusId = referenceMenu.push().getKey();
-                            HashMap<String, Object> hashMap = new HashMap<>();
-                            hashMap.put("prenom_publisher", prenom);
-                            hashMap.put("nom_publisher", nom);
-                            hashMap.put("email_publisher", email);
-                            hashMap.put("jour", jour);
-                            hashMap.put("dejeuner", nom_dejeuner);
-                            hashMap.put("diner", nom_diner);
-                            hashMap.put("id_publisher", id);
+                        referenceMenu = FirebaseDatabase.getInstance().getReference("Menus");
+                        String menusId = referenceMenu.push().getKey();
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("prenom_publisher", prenom);
+                        hashMap.put("nom_publisher", nom);
+                        hashMap.put("email_publisher", email);
+                        hashMap.put("jour", jour);
+                        hashMap.put("dejeuner", nom_dejeuner);
+                        hashMap.put("diner", nom_diner);
+                        hashMap.put("id_publisher", id);
 
-                            referenceMenu.child(menusId).setValue(hashMap);
+                        referenceMenu.child(menusId).setValue(hashMap);
 
-                            Toast.makeText(getApplicationContext(), "Menu bien ajouté", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(MenuRestoActivity.this, MenuRestoActivity.class));
-                        }
+                        Toast.makeText(getApplicationContext(), "Menu bien ajouté", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(MenuRestoActivity.this, MenuRestoActivity.class));
+                    }
 
 
 

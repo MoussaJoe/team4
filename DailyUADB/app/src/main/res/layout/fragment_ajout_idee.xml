@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.AjoutIdeeFragment">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:text="Publier"
+            android:textColor="@color/colorWhite"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_profils"
+            android:layout_width="135dp"
+            android:layout_height="127dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/prenom_nom"
+            android:layout_width="match_parent"
+            android:layout_height="126dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="96dp"
+            android:layout_gravity=""
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/idee_discussion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quelle pensée voulez-vous partager?"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="50dp"/>
+</LinearLayout>

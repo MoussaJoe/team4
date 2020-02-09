@@ -31,6 +31,21 @@
     <!-- TODO: Remove or change this placeholder text
     <string name="hello_blank_fragment">Hello blank fragment</string>-->
 
+    <!--Liste des des campus -->
+    <string-array name="liste_campus">
+        <item>Campus 1</item>
+        <item>Campus 2</item>
+    </string-array>
+
+    <!--Liste des des pavillons -->
+    <string-array name="liste_pavillon">
+        <item>Pavillon A</item>
+        <item>Pavillon B</item>
+        <item>Pavillon C</item>
+        <item>Pavillon D</item>
+    </string-array>
+
+
     <!--Liste des jours de la semaine -->
     <string-array name="liste_jour">
         <!--<item>Sélectionner un jour</item>-->
@@ -42,6 +57,7 @@
         <item>Samedi</item>
         <item>Dimanche</item>
     </string-array>
+    <string name="title_activity_activites_chambre">ActivitesChambre</string>
 
     <!--<string name="app_name">DailyUADB</string>
     <string name="email">email</string>

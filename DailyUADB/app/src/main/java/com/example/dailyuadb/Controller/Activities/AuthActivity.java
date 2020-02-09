@@ -2,6 +2,7 @@ package com.example.dailyuadb.Controller.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     String profile;
     FirebaseUser user;
     String uid;
+    Fragment selectedFrangment = null;
 
     private FirebaseAuth mAuth;
     @Override
@@ -94,8 +96,10 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                             if (profile.equalsIgnoreCase("Etudiant")){
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (profile.equalsIgnoreCase("Delegue")){
-
                                 startActivity(new Intent(getApplicationContext(), DelegueActivity.class));
+                            }else if (profile.equalsIgnoreCase("Codifiant")){
+                                //selectedFrangment = new CodifiantFragment();
+                                startActivity(new Intent(getApplicationContext(), AccueilCodifiantActivity.class));
                             }
                         }
 
