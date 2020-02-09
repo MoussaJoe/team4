@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.ProfileFragment;
-import com.example.dailyuadb.Fragment.SearchFragment;
+import com.example.dailyuadb.Fragment.IdeeFragment;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,7 +47,7 @@ public class AccueilCodifiantActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_search:
-                            selectedFrangment = new SearchFragment();
+                            selectedFrangment = new IdeeFragment();
                             break;
 
                         case R.id.nav_add:
