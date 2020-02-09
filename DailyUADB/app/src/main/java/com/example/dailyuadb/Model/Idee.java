@@ -7,14 +7,20 @@ public class Idee {
     private String heure;
     private String id;
     private String description;
+    private String prenom;
+    private String nom;
 
+    public Idee() {
+    }
 
-    public Idee(String id,String email, String description, String date, String heure) {
+    public Idee(String id, String email, String description, String date, String heure, String prenom, String nom) {
         this.id = id;
         this.email = email;
         this.description = description;
         this.date = date;
         this.heure = heure;
+        this.prenom = prenom;
+        this.nom = nom;
     }
 
     public String getEmail() {
@@ -55,5 +61,21 @@ public class Idee {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 }

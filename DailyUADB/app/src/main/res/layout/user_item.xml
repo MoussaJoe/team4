@@ -39,15 +39,4 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:background="@color/cardview_shadow_start_color"
-        android:id="@+id/btn_follow"
-        android:textColor="@color/colorPrimary"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone"/>
-
-
 </RelativeLayout>

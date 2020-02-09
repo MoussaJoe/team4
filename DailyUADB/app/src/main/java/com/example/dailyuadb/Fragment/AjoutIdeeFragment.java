@@ -1,7 +1,5 @@
 package com.example.dailyuadb.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SearchFragment extends Fragment implements View.OnClickListener{
+public class AjoutIdeeFragment extends Fragment implements View.OnClickListener{
     ImageView mPhoto_profil;
     EditText mIdee;
     TextView mPost;
@@ -45,12 +43,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
     FirebaseUser user ;
     String uid;
+    String prenom;
+    String nom;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_search, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_ajout_idee, container, false);
 
         mPhoto_profil = (ImageView) rootView.findViewById(R.id.image_profils);
         mIdee = (EditText) rootView.findViewById(R.id.idee_discussion);
@@ -99,7 +99,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
             String id = mBoiteIdee.push().getKey();
 
-            Idee idee = new Idee(id, email, mIdee.getText().toString().trim(), date_complet, heure);
+            Idee idee = new Idee(uid, email, mIdee.getText().toString().trim(), date_complet, heure, nom, prenom);
 
             mBoiteIdee.child(id).setValue(idee);
 
@@ -122,10 +122,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         mUsers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                email = dataSnapshot.child(uid).child("email").getValue().toString();
-                String prenom = dataSnapshot.child(uid).child("prenom").getValue().toString();
-                String nom = dataSnapshot.child(uid).child("nom").getValue().toString();
-                mPrenom_nom.setText(prenom+" "+nom);
+                 email = dataSnapshot.child(uid).child("email").getValue().toString();
+                 prenom = dataSnapshot.child(uid).child("prenom").getValue().toString();
+                 nom = dataSnapshot.child(uid).child("nom").getValue().toString();
+                 mPrenom_nom.setText(prenom+" "+nom);
             }
 
             @Override
