@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_menu_resto"
+        android:icon="@drawable/ic_repas"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_boite_idee"
+        android:icon="@drawable/ic_boite_idee"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_campus"
+        android:icon="@drawable/ic_campus"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_profile"
+        android:title=""/>
+
+</menu>

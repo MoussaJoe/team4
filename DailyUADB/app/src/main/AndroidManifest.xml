@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.AjouterChambreActivity"></activity>
+        <activity android:name=".Controller.Activities.AjouterActiviteActivity"></activity>
+        <activity android:name=".Controller.Activities.CodifiantActivity" />
+        <activity android:name=".Controller.Activities.AccueilCodifiantActivity" />
+        <activity android:name=".Controller.Activities.AjouterChambreActivity" />
         <activity android:name=".Controller.Activities.Activites_Chambre" />
         <activity android:name=".Controller.Activities.ListeMenuActivity" />
         <activity android:name=".Controller.Activities.MenuRestoActivity" />

@@ -126,7 +126,6 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
                         id = (String) dataSnapshot.child(uid).child("id").getValue();
                         email = (String) dataSnapshot.child(uid).child("email").getValue();
 
-                        System.out.println("Ok le menu est bon");
                         referenceMenu = FirebaseDatabase.getInstance().getReference("Menus");
                         String menusId = referenceMenu.push().getKey();
                         HashMap<String, Object> hashMap = new HashMap<>();
