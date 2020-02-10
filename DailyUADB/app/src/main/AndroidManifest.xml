@@ -37,6 +37,8 @@
         <activity android:name=".Controller.Activities.MainActivity" />
         <activity android:name=".Controller.Activities.CodifiantActivity" />
         <activity android:name=".Controller.Activities.AjouterActiviteActivity" />
+        <activity android:name=".Controller.Activities.AjoutIdeeActivity" />
+
         <activity android:name=".Controller.Activities.Inscription"
             android:parentActivityName=".Controller.Activities.AuthActivity"/>
         <activity android:name=".Controller.Activities.AuthActivity">

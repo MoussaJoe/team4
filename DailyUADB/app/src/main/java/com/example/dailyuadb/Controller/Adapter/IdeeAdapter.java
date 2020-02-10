@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dailyuadb.MainActivity;
 import com.example.dailyuadb.Model.Idee;
 import com.example.dailyuadb.Model.Post;
 import com.example.dailyuadb.Model.User;
