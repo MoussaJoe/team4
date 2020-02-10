@@ -3,6 +3,7 @@ package com.example.dailyuadb.Controller.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 
 import com.example.dailyuadb.Adapter.CommentAdapter;
+import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Model.ui.main.Comment;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;

@@ -70,8 +70,13 @@ public class HomeFragment extends Fragment {
                 postList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Post post = snapshot.getValue(Post.class);
+                    assert post != null;
+                    post.setDescription(snapshot.child("description").getValue().toString());
+                    post.setPublisher(snapshot.child("publisher").getValue().toString());
+                    post.setPostId(snapshot.child("postid").getValue().toString());
+                    post.setPostImage(snapshot.child("postimage").getValue().toString());
                     postList.add(post);
-                    /*for (String id : post_a_afficher
+                    /*for (String id : post_a_afficher=
                          ) {
                         postList.add(post);
                     }*/

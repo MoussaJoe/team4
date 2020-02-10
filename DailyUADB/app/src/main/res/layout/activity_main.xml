@@ -17,16 +17,14 @@
         android:id="@+id/bottom"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content">
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bottom_navigation"
+            android:id="@+id/bottom_navigation_etudiant"
             app:itemIconTint="@color/colorAccent"
             app:labelVisibilityMode="unlabeled"
             android:background="?android:attr/windowBackground"
             app:menu="@menu/boutton_navigation"/>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>

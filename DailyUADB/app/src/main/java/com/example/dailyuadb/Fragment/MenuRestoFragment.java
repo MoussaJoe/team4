@@ -1,12 +1,16 @@
-package com.example.dailyuadb.Controller.Activities;
+package com.example.dailyuadb.Fragment;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.dailyuadb.Controller.Activities.ListeMenuActivity;
+import com.example.dailyuadb.Controller.Activities.MenuRestoActivity;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,12 +29,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public class MenuRestoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
+public class MenuRestoFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     private EditText diner_id, dejeuner_id;
     private Spinner id_jour;
     private Button button_add_repas;
@@ -46,29 +49,23 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
     String id = "";
     String email = "";
 
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //Redirection vers l'activité précédent
-        getSupportActionBar().setTitle("Menu Resto");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_menu_resto, container, false);
 
-
-        setContentView(R.layout.activity_menu_resto);
-
-        id_jour =  findViewById(R.id.id_jour);
-        diner_id = findViewById(R.id.diner_id);
-        dejeuner_id = findViewById(R.id.dejeuner_id);
+        id_jour = view.findViewById(R.id.id_jour);
+        diner_id = view.findViewById(R.id.diner_id);
+        dejeuner_id = view.findViewById(R.id.dejeuner_id);
         ArrayAdapter<CharSequence> adapter;
-        adapter = ArrayAdapter.createFromResource( this, R.array.liste_jour, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource( getContext(), R.array.liste_jour, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         id_jour.setAdapter(adapter);
         id_jour.setOnItemSelectedListener(this);
 
 
-        button_add_repas = findViewById(R.id.button_add_repas);
+        button_add_repas = view.findViewById(R.id.button_add_repas);
         button_add_repas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,10 +139,10 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
                         hashMap.put("diner", nom_diner);
                         hashMap.put("id_publisher", id);
 
-                        referenceMenu.child(menusId).setValue(hashMap);
+                        //referenceMenu.child(menusId).setValue(hashMap);
 
-                        Toast.makeText(getApplicationContext(), "Menu bien ajouté", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(MenuRestoActivity.this, MenuRestoActivity.class));
+                        Toast.makeText(getContext(), "Menu bien ajouté", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getContext(), MenuRestoFragment.class));
                     }
 
 
@@ -159,18 +156,15 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
         });
 
         //Evenement Click sur le boutton Lister les menus
-        button_lister_menu = findViewById(R.id.btn_lister_menu);
+        button_lister_menu = view.findViewById(R.id.btn_lister_menu);
         button_lister_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuRestoActivity.this, ListeMenuActivity.class));
+                startActivity(new Intent(getContext(), ListeMenuActivity.class));
             }
         });
-    }
 
-    @Override
-    public void onClick(View v) {
-
+        return view;
     }
 
     @Override

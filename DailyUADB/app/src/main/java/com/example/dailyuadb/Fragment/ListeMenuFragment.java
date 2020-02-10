@@ -1,11 +1,24 @@
-package com.example.dailyuadb.Controller.Activities;
+package com.example.dailyuadb.Fragment;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.dailyuadb.Fragment.ListeMenuFragment;
-import com.example.dailyuadb.Fragment.ProfileFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.dailyuadb.Controller.Activities.DelegueActivity;
+import com.example.dailyuadb.Controller.Activities.ListeMenuActivity;
+import com.example.dailyuadb.Controller.Activities.MainActivity;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,19 +28,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class ListeMenuActivity extends AppCompatActivity {
+
+public class ListeMenuFragment extends Fragment {
 
     private TextView text_jour,text_dejeuner,text_diner;
     private Button btn_note_diner, btn_note_dejeuner;
@@ -48,24 +54,19 @@ public class ListeMenuActivity extends AppCompatActivity {
     String date_du_jour = new SimpleDateFormat("EEEE", Locale.FRANCE).format(System.currentTimeMillis());
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_menu);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_liste_menu, container, false);
 
-        //Redirection vers l'activité précédent
-        getSupportActionBar().setTitle("Lister Menu");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        text_jour = view.findViewById(R.id.text_jour);
+        text_dejeuner = view.findViewById(R.id.text_dejeuner);
+        text_diner = view.findViewById(R.id.text_diner);
 
+        btn_note_dejeuner = view.findViewById(R.id.btn_note_dej);
+        btn_note_diner = view.findViewById(R.id.btn_note_diner);
 
-        text_jour = findViewById(R.id.text_jour);
-        text_dejeuner = findViewById(R.id.text_dejeuner);
-        text_diner = findViewById(R.id.text_diner);
-
-        btn_note_dejeuner = findViewById(R.id.btn_note_dej);
-        btn_note_diner = findViewById(R.id.btn_note_diner);
-
-        ratingBar_dejeuner = findViewById(R.id.ratingBar_dejeuner);
-        ratingBar_diner = findViewById(R.id.ratingBar_diner);
+        ratingBar_dejeuner = view.findViewById(R.id.ratingBar_dejeuner);
+        ratingBar_diner = view.findViewById(R.id.ratingBar_diner);
         System.out.println("Aujourdhui "+date_du_jour);
 
         reference = FirebaseDatabase.getInstance().getReference("Menus");
@@ -93,6 +94,8 @@ public class ListeMenuActivity extends AppCompatActivity {
 
         noter_un_repas(ratingBar_dejeuner, btn_note_dejeuner, "Dejeuner");
         noter_un_repas(ratingBar_diner, btn_note_diner, "Diner");
+
+        return view;
     }
 
     public void noter_un_repas(RatingBar note_du_repas, Button button, final String typeRepas){
@@ -119,7 +122,7 @@ public class ListeMenuActivity extends AppCompatActivity {
                     case 5:
                         message = "Encore merci";
                 }
-                Toast.makeText(ListeMenuActivity.this, message, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -157,11 +160,11 @@ public class ListeMenuActivity extends AppCompatActivity {
 
                         referenceNoteMenu.child(noteMenusId).setValue(hashMap);
                         if (dataSnapshot.child(uid).child("profil").getValue().toString().equalsIgnoreCase("Etudiant")){
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            Toast.makeText(ListeMenuActivity.this, "Merci d'avoir noter le repas!! A bientot", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getActivity(), MainActivity.class));
+                            Toast.makeText(getActivity(), "Merci d'avoir noter le repas!! A bientot", Toast.LENGTH_LONG).show();
                         }else if (dataSnapshot.child(uid).child("profil").getValue().toString().equalsIgnoreCase("Delegue")){
-                            startActivity(new Intent(getApplicationContext(), DelegueActivity.class));
-                            Toast.makeText(ListeMenuActivity.this, "Merci d'avoir noter le repas!! A bientot", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getActivity(), DelegueActivity.class));
+                            Toast.makeText(getActivity(), "Merci d'avoir noter le repas!! A bientot", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -176,4 +179,5 @@ public class ListeMenuActivity extends AppCompatActivity {
         });
 
     }
+
 }

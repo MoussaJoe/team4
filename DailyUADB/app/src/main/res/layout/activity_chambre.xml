@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Activities.Activites_Chambre">
+    tools:context=".Controller.Activities.ChambreActivity">
 
     <Button
         android:id="@+id/btn_add_chambre"
@@ -38,19 +38,4 @@
         tools:text="Lister les chambres"
         android:textSize="22sp"/>
 
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:id="@+id/bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content">
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottom_navigation_delegue"
-            app:itemIconTint="@color/colorAccent"
-            app:labelVisibilityMode="unlabeled"
-            android:background="?android:attr/windowBackground"
-            app:menu="@menu/nav_bar_delegue"/>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

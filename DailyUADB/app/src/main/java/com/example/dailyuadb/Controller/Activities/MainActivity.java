@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_etudiant);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelected);
 
@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
                             selectedFrangment = new HomeFragment();
                             break;
 
-                        case R.id.nav_search:
-                            selectedFrangment = new IdeeFragment();
+                        case R.id.nav_boite_idee:
+                            selectedFrangment = new AjoutIdeeFragment();
                             break;
 
-                        case R.id.nav_add:
+                        /*case R.id.nav_add:
                             selectedFrangment = null;
                             startActivity(new Intent(MainActivity.this, PostActivity.class));
-                            break;
+                            break;*/
 
                         case R.id.nav_menu_resto:
                             selectedFrangment = null;

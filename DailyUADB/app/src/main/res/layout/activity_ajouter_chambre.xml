@@ -101,20 +101,4 @@
         android:text="Choisir un pavillon"
         android:textSize="18sp" />
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:id="@+id/bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content">
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottom_navigation_delegue"
-            app:itemIconTint="@color/colorAccent"
-            app:labelVisibilityMode="unlabeled"
-            android:background="?android:attr/windowBackground"
-            app:menu="@menu/nav_bar_delegue"/>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </RelativeLayout>

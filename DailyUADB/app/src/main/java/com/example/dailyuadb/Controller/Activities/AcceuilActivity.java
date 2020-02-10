@@ -46,7 +46,7 @@ public class AcceuilActivity extends AppCompatActivity {
                             //startActivity(new Intent(AcceuilActivity.this, PostAdapter.class));
                             break;
 
-                        case R.id.nav_search:
+                        case R.id.nav_boite_idee:
                             selectedFrangment = new AjoutIdeeFragment();
                             break;
 

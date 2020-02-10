@@ -7,14 +7,14 @@
         android:title=""/>
 
     <item
-        android:id="@+id/nav_search"
-        android:icon="@drawable/ic_search"
+        android:id="@+id/nav_boite_idee"
+        android:icon="@drawable/ic_boite_idee"
         android:title=""/>
 
-    <item
+    <!--<item
         android:id="@+id/nav_add"
         android:icon="@drawable/ic_add"
-        android:title=""/>
+        android:title=""/>-->
 
     <item
         android:id="@+id/nav_repas"

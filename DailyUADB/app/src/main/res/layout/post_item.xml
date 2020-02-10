@@ -66,13 +66,12 @@
         </RelativeLayout>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textStyle="bold"
-            android:id="@+id/likes"
-            android:text="10 Likes"
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:textStyle="bold"
+              android:id="@+id/likes"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -81,25 +80,24 @@
             android:layout_marginStart="8dp"
             android:textStyle="bold"
             android:id="@+id/publisher"
-            android:text="username "
             android:textColor="@color/colorPrimaryDark"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:id="@+id/description"
-            android:text="Text de la publication..."
-            android:textColor="@color/colorPrimaryDark"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:id="@+id/description"
+          android:text="Text de la publication..."
+          android:textColor="@color/colorPrimaryDark"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/comments"
-            android:text="Voir les 20 commentaires"
-            android:textColor="@color/colorAccent"/>
-    </LinearLayout>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:layout_marginBottom="10dp"
+          android:id="@+id/comments"
+          android:text="Voir les 20 commentaires"
+          android:textColor="@color/colorAccent"/>
+  </LinearLayout>
 </RelativeLayout>

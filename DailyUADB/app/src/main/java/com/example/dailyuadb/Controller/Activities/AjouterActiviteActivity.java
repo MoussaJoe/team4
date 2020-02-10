@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class AjouterActiviteActivity extends AppCompatActivity {
@@ -71,6 +73,12 @@ public class AjouterActiviteActivity extends AppCompatActivity {
                     reference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Date date = new Date();
+                            SimpleDateFormat sdf = new SimpleDateFormat("E dd/MM/yyyy");
+                            String date_complet = sdf.format(date);
+                            SimpleDateFormat sdf_hour = new SimpleDateFormat("HH:mm");
+                            String heure = sdf_hour.format(date);
+
                             prenom = (String) dataSnapshot.child(uid).child("prenom").getValue();
                             nom = (String) dataSnapshot.child(uid).child("nom").getValue();
                             id = (String) dataSnapshot.child(uid).child("id").getValue();
@@ -82,6 +90,8 @@ public class AjouterActiviteActivity extends AppCompatActivity {
                             hashMap.put("prenom_publisher", prenom);
                             hashMap.put("nom_publisher", nom);
                             hashMap.put("email_publisher", email);
+                            hashMap.put("heure", heure);
+                            hashMap.put("date", date_complet);
                             hashMap.put("description", description);
                             hashMap.put("nom_activite", nom_activite);
                             hashMap.put("id_publisher", id);
