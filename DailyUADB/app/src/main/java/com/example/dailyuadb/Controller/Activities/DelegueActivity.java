@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.ProfileFragment;
-import com.example.dailyuadb.Fragment.AjoutIdeeFragment;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +41,6 @@ public class DelegueActivity extends AppCompatActivity {
 
                     switch (menuItem.getItemId()){
                         case R.id.nav_home:
-                            //selectedFrangment = new HomeFragment();
                             selectedFrangment = new HomeFragment();
                             break;
 
@@ -58,10 +56,7 @@ public class DelegueActivity extends AppCompatActivity {
 
                         case R.id.nav_campus:
                             selectedFrangment = null;
-                            startActivity(new Intent(DelegueActivity.this, Activites_Chambre.class));
-
-                        case R.id.nav_search:
-                            selectedFrangment = new AjoutIdeeFragment();
+                            startActivity(new Intent(DelegueActivity.this, ChambreActivity.class));
                             break;
 
                         case R.id.nav_profile:

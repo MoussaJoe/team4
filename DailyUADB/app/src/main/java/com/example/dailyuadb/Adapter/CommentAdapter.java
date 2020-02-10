@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dailyuadb.MainActivity;
+import com.example.dailyuadb.Controller.Activities.MainActivity;
 import com.example.dailyuadb.Model.ui.main.Comment;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;

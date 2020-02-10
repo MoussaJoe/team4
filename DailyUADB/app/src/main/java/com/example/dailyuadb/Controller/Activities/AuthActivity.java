@@ -92,7 +92,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             profile = dataSnapshot.child(uid).child("profil").getValue().toString();
                             //search.setText(profile);
-                            System.out.println("Mon profile depuis Auth"+profile);
+                            System.out.println("Mon profile depuis Auth "+profile);
                             if (profile.equalsIgnoreCase("Etudiant")){
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (profile.equalsIgnoreCase("Delegue")){

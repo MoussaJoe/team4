@@ -12,12 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.CommentsActivity"></activity>
+        <activity android:name=".Controller.Activities.ChambreActivity"></activity>
+        <activity android:name=".Controller.Activities.CommentsActivity" />
         <activity android:name=".Controller.Activities.ListeMenuActivity" />
         <activity android:name=".Controller.Activities.MenuRestoActivity" />
         <activity android:name=".Controller.Activities.DelegueActivity" />
         <activity android:name=".Controller.Activities.PostActivity" />
         <activity android:name=".Controller.Activities.MainActivity" />
+        <activity android:name=".Controller.Activities.AjouterChambreActivity" />
+        <activity android:name=".Controller.Activities.AccueilCodifiantActivity" />
+        <activity android:name=".Controller.Activities.CodifiantActivity" />
+        <activity android:name=".Controller.Activities.AjouterActiviteActivity" />
         <activity android:name=".Controller.Activities.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +34,6 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat" />
-        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

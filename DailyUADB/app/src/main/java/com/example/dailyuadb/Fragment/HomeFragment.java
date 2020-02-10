@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Post post = snapshot.getValue(Post.class);
                     postList.add(post);
-                    /*for (String id : post_a_afficher
+                    /*for (String id : post_a_afficher=
                          ) {
                         postList.add(post);
                     }*/

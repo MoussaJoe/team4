@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Activities.Activites_Chambre">
+    tools:context=".Controller.Activities.ChambreActivity">
 
     <Button
         android:id="@+id/btn_add_chambre"
@@ -53,4 +53,5 @@
             android:background="?android:attr/windowBackground"
             app:menu="@menu/nav_bar_delegue"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </RelativeLayout>

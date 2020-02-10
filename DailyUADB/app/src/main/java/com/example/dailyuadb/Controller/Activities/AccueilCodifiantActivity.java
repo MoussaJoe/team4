@@ -42,17 +42,15 @@ public class AccueilCodifiantActivity extends AppCompatActivity {
                     switch (menuItem.getItemId()){
                         case R.id.nav_home:
                             selectedFrangment = new HomeFragment();
-                            //selectedFrangment = null;
-                            //startActivity(new Intent(AcceuilActivity.this, PostAdapter.class));
                             break;
 
-                        case R.id.nav_search:
+                        case R.id.nav_boite_idee:
                             selectedFrangment = new IdeeFragment();
                             break;
 
-                        case R.id.nav_add:
+                        case R.id.nav_menu_resto:
                             selectedFrangment = null;
-                            //startActivity(new Intent(AcceuilActivity.this, PostActivity.class));
+                            startActivity(new Intent(AccueilCodifiantActivity.this, ListeMenuActivity.class));
                             break;
 
                         case R.id.nav_campus:
