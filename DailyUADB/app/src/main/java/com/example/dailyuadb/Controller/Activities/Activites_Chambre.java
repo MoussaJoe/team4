@@ -22,7 +22,7 @@ public class Activites_Chambre extends AppCompatActivity {
         btn_add_chambre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Activites_Chambre.this, AjouterChambreActivity.class));
+               startActivity(new Intent(Activites_Chambre.this, AjouterChambreActivity.class));
             }
         });
 
