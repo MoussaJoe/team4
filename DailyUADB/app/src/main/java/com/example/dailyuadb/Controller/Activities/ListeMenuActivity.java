@@ -52,6 +52,10 @@ public class ListeMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_menu);
 
+        //Redirection vers l'activité précédent
+        getSupportActionBar().setTitle("Lister Menu");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         text_jour = findViewById(R.id.text_jour);
         text_dejeuner = findViewById(R.id.text_dejeuner);

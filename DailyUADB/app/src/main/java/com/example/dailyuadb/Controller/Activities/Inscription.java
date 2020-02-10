@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.R;
 import com.example.dailyuadb.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +44,9 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
         mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.inscription_valide_btn).setOnClickListener(this);
+
+        getSupportActionBar().setTitle("Inscription");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 

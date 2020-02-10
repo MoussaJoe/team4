@@ -12,17 +12,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.ChambreActivity"></activity>
-        <activity android:name=".Controller.Activities.CommentsActivity" />
-        <activity android:name=".Controller.Activities.ListeMenuActivity" />
-        <activity android:name=".Controller.Activities.MenuRestoActivity" />
+
+        <activity android:name=".Controller.Activities.CommentsActivity"
+            android:parentActivityName=".Controller.Activities.AcceuilActivity"></activity>
+        <activity android:name=".Controller.Activities.AccueilCodifiantActivity"/>
+
+
+        <!-- Activite Ouzy -->
+        <activity android:name=".Controller.Activities.MenuRestoActivity"
+            android:parentActivityName=".Controller.Activities.DelegueActivity"
+            />
+        <activity android:name=".Controller.Activities.ListeMenuActivity"
+            android:parentActivityName=".Controller.Activities.DelegueActivity"/>
+
+        <activity android:name=".Controller.Activities.ChambreActivity"
+            android:parentActivityName=".Controller.Activities.DelegueActivity"/>
+
+        <activity android:name=".Controller.Activities.AjouterChambreActivity"
+            android:parentActivityName=".Controller.Activities.ChambreActivity"/>
+
+
         <activity android:name=".Controller.Activities.DelegueActivity" />
         <activity android:name=".Controller.Activities.PostActivity" />
         <activity android:name=".Controller.Activities.MainActivity" />
-        <activity android:name=".Controller.Activities.AjouterChambreActivity" />
-        <activity android:name=".Controller.Activities.AccueilCodifiantActivity" />
         <activity android:name=".Controller.Activities.CodifiantActivity" />
         <activity android:name=".Controller.Activities.AjouterActiviteActivity" />
+        <activity android:name=".Controller.Activities.Inscription"
+            android:parentActivityName=".Controller.Activities.AuthActivity"/>
         <activity android:name=".Controller.Activities.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

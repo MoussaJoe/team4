@@ -18,6 +18,10 @@ public class ChambreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chambre);
 
+        //Redirection vers l'activité précédent
+        getSupportActionBar().setTitle("Chambre");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Redirection vers Ajouter Chambre
         btn_add_chambre = findViewById(R.id.btn_add_chambre);
         btn_add_chambre.setOnClickListener(new View.OnClickListener() {

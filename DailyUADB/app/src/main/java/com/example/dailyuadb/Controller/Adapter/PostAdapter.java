@@ -35,6 +35,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
     public Context mContext;
     public List<Post> mPost;
+    public Post post;
 
     private FirebaseUser firebaseUser;
 
@@ -65,7 +66,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             viewHolder.description.setText(post.getDescription());
         }
 
-        publicherInfo(viewHolder.image_profil,viewHolder.username,viewHolder.publicher,post.getPublisher(),viewHolder.post_image);
+        publisherInfo(viewHolder.image_profil,viewHolder.username);
 
         viewHolder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +104,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         public ImageView image_profil,post_image,like,comment;
         public TextView username,likes,publicher,description,comments;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image_profil= itemView.findViewById(R.id.image_profils);
@@ -123,7 +125,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                comments.setText("View All "+dataSnapshot.getChildrenCount()+" Comments");
+                comments.setText("Voir les "+dataSnapshot.getChildrenCount()+" commentaires");
             }
 
             @Override
@@ -133,22 +135,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         });
     }
 
-
-    String uid = "";
-
-    public void publicherInfo(final ImageView image_profile, final TextView username, final TextView publicher, final String userid,final ImageView post_image){
+    public void publisherInfo(final ImageView image_profile, final TextView username){
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Users");
-        DatabaseReference reference1= FirebaseDatabase.getInstance().getReference("Posts");
+      //  DatabaseReference reference1= FirebaseDatabase.getInstance().getReference("Posts");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                System.out.println("UserUID "+userid);
-                User user= dataSnapshot.getValue(User.class);
+
                 for (DataSnapshot s: dataSnapshot.getChildren()
                      ) {
                     Glide.with(mContext).load(s.child("imageurl").getValue()).into(image_profile);
-                    username.setText(s.child("prenom").getValue().toString());
+                    username.setText(s.child("prenom").getValue().toString()+" "+s.child("nom").getValue().toString());
                    // System.out.println("img: "+s.child("imageurl"));
                 }
             }
@@ -159,12 +157,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             }
         });
 
-        reference1.addValueEventListener(new ValueEventListener() {
+       /* reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Post post = dataSnapshot.getValue(Post.class);
                 for (DataSnapshot s: dataSnapshot.getChildren()
                 ) {
+                    System.out.println("Img "+s.child("postimage").getValue());
                     Glide.with(mContext).load(s.child("postimage").getValue()).into(post_image);
                    // publicher.setText(s.child("publisher").getValue().toString());
                 }
@@ -180,7 +178,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
 
 
-        });
+        }); */
 
     }
 

@@ -33,7 +33,8 @@
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
-        android:hint="Mot de passe"/>
+        android:hint="Mot de passe"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/auth_activity_connectio_btn"

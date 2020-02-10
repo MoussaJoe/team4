@@ -51,6 +51,10 @@ import java.util.HashMap;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter_chambre);
 
+        //Redirection vers l'activité précédent
+        getSupportActionBar().setTitle("Ajouter chambre");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         id_campus = findViewById(R.id.id_campus);
         id_pavillon = findViewById(R.id.id_pavillon);

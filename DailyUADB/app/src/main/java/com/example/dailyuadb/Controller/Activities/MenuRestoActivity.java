@@ -51,6 +51,11 @@ public class MenuRestoActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Redirection vers l'activité précédent
+        getSupportActionBar().setTitle("Menu Resto");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         setContentView(R.layout.activity_menu_resto);
 
         id_jour =  findViewById(R.id.id_jour);
