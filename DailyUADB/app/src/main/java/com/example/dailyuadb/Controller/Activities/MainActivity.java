@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_search:
-                            selectedFrangment = new AjoutIdeeFragment();
+                            selectedFrangment = new IdeeFragment();
                             break;
 
                         case R.id.nav_add:

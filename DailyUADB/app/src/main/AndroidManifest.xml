@@ -12,9 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.CommentsActivity"></activity>
+        <activity android:name=".Controller.Activities.AjoutIdeeActivity"></activity>
+        <activity android:name=".Controller.Activities.CommentsActivity" />
         <activity android:name=".Controller.Activities.ListeMenuActivity" />
         <activity android:name=".Controller.Activities.MenuRestoActivity" />
+        <activity android:name=".Controller.Activities.AccueilCodifiantActivity" />
         <activity android:name=".Controller.Activities.DelegueActivity" />
         <activity android:name=".Controller.Activities.PostActivity" />
         <activity android:name=".Controller.Activities.MainActivity" />
@@ -29,7 +31,7 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

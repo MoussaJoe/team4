@@ -1,6 +1,7 @@
 package com.example.dailyuadb.Controller.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.dailyuadb.MainActivity;
 import com.example.dailyuadb.Model.Idee;
 import com.example.dailyuadb.Model.Post;
 import com.example.dailyuadb.Model.User;
+import com.example.dailyuadb.Model.ui.main.Comment;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,25 +48,20 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.user_item, viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.idee_item, viewGroup,false);
         System.out.println("methode Oncreate");
         return new IdeeAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        Idee idee= mIdee.get(i);
+        firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+        final Idee idees= mIdee.get(i);
+        viewHolder.idee.setText(idees.getDescription());
+        viewHolder.dateTime.setText(idees.getDate()+" à "+idees.getHeure());
+        getUserInfo(viewHolder.image_profile,viewHolder.username, idees.getId());
 
-        /*if (post.getDescription().equals("")){
-            viewHolder.description.setVisibility(View.GONE);
 
-        }else {
-            viewHolder.description.setVisibility(View.VISIBLE);
-            viewHolder.description.setText(post.getDescription());
-        }*/
-
-        publicherInfo(viewHolder.image_profil,viewHolder.username,viewHolder.message);
     }
 
 
@@ -74,63 +72,27 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public CircleImageView image_profil,post_image,like,comment;
-        public TextView username, message;
+
+        public ImageView image_profile;
+        public TextView username, idee, dateTime;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            image_profil= itemView.findViewById(R.id.image_profils);
-            like= itemView.findViewById(R.id.like);
-            comment= itemView.findViewById(R.id.comment);
+            image_profile= itemView.findViewById(R.id.image_profile);
             username= itemView.findViewById(R.id.username);
-            message = itemView.findViewById(R.id.fullname);
-
+            idee= itemView.findViewById(R.id.comment);
+            dateTime = itemView.findViewById(R.id.datetime);
         }
     }
 
-    public void publicherInfo(final ImageView image_profile, final TextView username, final TextView description){
-        final DatabaseReference reference1= FirebaseDatabase.getInstance().getReference("Users");
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Idees");
-            System.out.println("methode publisher");
+
+    private void getUserInfo(final ImageView imageView, final TextView username, String id){
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Users").child(id);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                String idIdee;
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()
-                     ) {
-                    idees = new Idee();
-                    idees.setId(snapshot.child("id").getValue().toString());
-                    idees.setDescription(snapshot.child("description").getValue().toString());
-                    idees.setPrenom(snapshot.child("prenom").getValue().toString());
-                    idees.setNom(snapshot.child("nom").getValue().toString());
-                    listIdIdee.add(idees);
-                }
-                for(Idee idea : listIdIdee){
-                    Log.i("ideal",idea.getNom() +" "+idea.getPrenom()+ " "+idea.getDescription());
-                }
-            }
-
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-
-        //Liste des IdUser issue de la table Idees
-        for (final Idee listIdees : listIdIdee
-             ) {
-            reference1.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //Idee idee = dataSnapshot.getValue(Idee.class);
-
-                    Glide.with(mContext).load(dataSnapshot.child(listIdees.getId()).child("imageurl").getValue()).into(image_profile);
-
+                Glide.with(mContext).load(dataSnapshot.child("imageurl").getValue()).into(imageView);
+                username.setText(dataSnapshot.child("prenom").getValue().toString()+" "+dataSnapshot.child("nom").getValue().toString());
             }
 
             @Override
@@ -138,7 +100,5 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
 
             }
         });
-        }
-
     }
 }
