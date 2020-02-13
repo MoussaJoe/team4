@@ -29,12 +29,15 @@
         <activity
             android:name=".Controller.Activities.AjouterChambreActivity"
             android:parentActivityName=".Controller.Activities.ChambreActivity" />
+        <activity
+            android:name=".Controller.Activities.PavillonActivity" />
         <activity android:name=".Controller.Activities.DelegueActivity" />
         <activity android:name=".Controller.Activities.PostActivity" />
         <activity android:name=".Controller.Activities.MainActivity" />
         <activity android:name=".Controller.Activities.CodifiantActivity" />
         <activity android:name=".Controller.Activities.AjouterActiviteActivity" />
-        <activity android:name=".Controller.Activities.AjoutIdeeActivity" />
+        <activity android:name=".Controller.Activities.AjoutIdeeActivity"
+            android:parentActivityName=".Controller.Activities.AcceuilActivity"/>
         <activity
             android:name=".Controller.Activities.Inscription"
             android:parentActivityName=".Controller.Activities.AuthActivity" />
