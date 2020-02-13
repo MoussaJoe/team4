@@ -84,7 +84,6 @@ public class PostActivity extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Publication en cours");
         progressDialog.show();
-        System.out.println(imageUri);
 
         if (imageUri != null){
             final StorageReference fileReference = storageReference.child(System.currentTimeMillis()+

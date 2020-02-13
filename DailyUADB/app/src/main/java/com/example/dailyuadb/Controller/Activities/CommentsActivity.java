@@ -99,7 +99,7 @@ public class CommentsActivity extends AppCompatActivity {
 
     private void addComment(){
 
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Comments");
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Posts").child(postid).child("Comments");
 
         HashMap<String,Object> hashMap= new HashMap<>();
         hashMap.put("comment",addcomment.getText().toString());
@@ -128,7 +128,7 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     private void readComments(){
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Comments");
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Posts").child(postid).child("Comments");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.Model.User;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -69,8 +68,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
                 editor.putString("profileid",user.getId());
                 editor.apply();
 
-                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
+                /*((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProfileFragment()).commit();*/
             }
         });
 

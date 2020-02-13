@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.dailyuadb.Fragment.ListeMenuFragment;
-import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

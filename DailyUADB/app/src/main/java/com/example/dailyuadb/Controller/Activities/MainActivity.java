@@ -9,8 +9,6 @@ import android.view.MenuItem;
 
 import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.IdeeFragment;
-import com.example.dailyuadb.Fragment.ProfileFragment;
-import com.example.dailyuadb.Fragment.AjoutIdeeFragment;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("profileid",publisher);
             editor.apply();
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new ProfileFragment()).commit();
+            /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new ProfileFragment()).commit();*/
 
         }else {
 
@@ -85,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = getSharedPreferences("PREFS",MODE_PRIVATE).edit();
                             editor.putString("profileid", FirebaseAuth.getInstance().getUid());
                             editor.apply();
-                            selectedFrangment = new ProfileFragment();
+                            selectedFrangment = null;
+                            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                             break;
                     }
 

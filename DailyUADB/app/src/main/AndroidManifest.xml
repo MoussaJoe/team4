@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.Activities.PavillonActivity" />
+        <activity android:name=".Controller.Activities.ProfileActivity"></activity>
         <activity
             android:name=".Controller.Activities.CommentsActivity"
             android:parentActivityName=".Controller.Activities.AcceuilActivity" />
@@ -34,9 +34,7 @@
         <activity android:name=".Controller.Activities.MainActivity" />
         <activity android:name=".Controller.Activities.CodifiantActivity" />
         <activity android:name=".Controller.Activities.AjouterActiviteActivity" />
-        <activity
-            android:name=".Controller.Activities.AjoutIdeeActivity"
-            android:parentActivityName=".Controller.Activities.MainActivity" />
+        <activity android:name=".Controller.Activities.AjoutIdeeActivity" />
         <activity
             android:name=".Controller.Activities.Inscription"
             android:parentActivityName=".Controller.Activities.AuthActivity" />

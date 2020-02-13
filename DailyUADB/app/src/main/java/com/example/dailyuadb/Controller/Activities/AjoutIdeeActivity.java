@@ -14,9 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dailyuadb.Fragment.HomeFragment;
 import com.example.dailyuadb.Fragment.IdeeFragment;
-import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.Model.Idee;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
