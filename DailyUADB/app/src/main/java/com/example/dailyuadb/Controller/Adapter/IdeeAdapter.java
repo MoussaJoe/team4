@@ -14,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.dailyuadb.Model.Idee;
-import com.example.dailyuadb.Model.Post;
-import com.example.dailyuadb.Model.User;
-import com.example.dailyuadb.Model.ui.main.Comment;
 import com.example.dailyuadb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,7 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
 
@@ -60,7 +56,6 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
         viewHolder.dateTime.setText(idees.getDate()+" à "+idees.getHeure());
         getUserInfo(viewHolder.image_profile,viewHolder.username, idees.getId());
 
-
     }
 
 
@@ -83,7 +78,6 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.ViewHolder> {
             dateTime = itemView.findViewById(R.id.datetime);
         }
     }
-
 
     private void getUserInfo(final ImageView imageView, final TextView username, String id){
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Users").child(id);

@@ -55,7 +55,7 @@ public class AccueilCodifiantActivity extends AppCompatActivity {
 
                         case R.id.nav_campus:
                             selectedFrangment = null;
-                            startActivity(new Intent(AccueilCodifiantActivity.this, CodifiantActivity.class));
+                            startActivity(new Intent(AccueilCodifiantActivity.this, PavillonActivity.class));
                             break;
 
                         case R.id.nav_profile:

@@ -7,15 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.dailyuadb.R;
 
 public class CodifiantActivity extends AppCompatActivity {
+    String pav;
+    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codifiant);
+
+
+        Intent intent = getIntent();
+        String text = intent.getStringExtra(PavillonActivity.NAME_PAVILLON);
+
+
     }
 
     @Override
@@ -33,5 +42,12 @@ public class CodifiantActivity extends AppCompatActivity {
             startActivity(new Intent(CodifiantActivity.this, AjouterActiviteActivity.class));
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
     }
 }

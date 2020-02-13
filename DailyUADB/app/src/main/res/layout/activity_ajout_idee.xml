@@ -9,27 +9,7 @@
     android:orientation="vertical"
     tools:context=".Controller.Activities.AjoutIdeeActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-        <TextView
-            android:id="@+id/post"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:text="Publier"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
 
-    </RelativeLayout>
 
     <Toolbar
         android:layout_width="match_parent"
@@ -39,7 +19,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="126dp"
+        android:layout_height="150dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -50,10 +30,11 @@
         <TextView
             android:id="@+id/prenom_nom"
             android:layout_width="match_parent"
-            android:layout_height="126dp"
-            android:layout_marginEnd="72dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="96dp"
-            android:layout_gravity=""
+            android:textSize="23sp"
             android:gravity="center"/>
 
     </LinearLayout>
@@ -65,4 +46,20 @@
         android:hint="Quelle pensée voulez-vous partager?"
         android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="50dp"/>
+
+
+        <Button
+            android:id="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+            android:text="Publier"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="15dp" />
+
 </LinearLayout>

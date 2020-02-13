@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class AjoutIdeeActivity extends AppCompatActivity implements View.OnClick
 
     ImageView mPhoto_profil;
     EditText mIdee;
-    TextView mPost;
+    Button mPost;
     TextView mPrenom_nom;
 
     Fragment selectedFrangment;
@@ -70,7 +71,7 @@ public class AjoutIdeeActivity extends AppCompatActivity implements View.OnClick
         mIdee = (EditText) findViewById(R.id.idee_discussion);
         mPrenom_nom = (TextView) findViewById(R.id.prenom_nom);
 
-        mPost = (TextView) findViewById(R.id.post);
+        mPost = (Button) findViewById(R.id.post);
 
         findViewById(R.id.post).setOnClickListener(this);
 
@@ -111,6 +112,7 @@ public class AjoutIdeeActivity extends AppCompatActivity implements View.OnClick
             mBoiteIdee.child(id).setValue(idee);
 
             Toast.makeText(getApplicationContext(), "idee bien ajoutée", Toast.LENGTH_SHORT).show();
+            mIdee.setText("");
         }
         else {
             mIdee.setError(getString(R.string.input_error_email));
