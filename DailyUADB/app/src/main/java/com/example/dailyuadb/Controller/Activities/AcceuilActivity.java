@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.dailyuadb.Fragment.HomeFragment;
-import com.example.dailyuadb.Fragment.ProfileFragment;
 import com.example.dailyuadb.Fragment.AjoutIdeeFragment;
 import com.example.dailyuadb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -64,7 +63,8 @@ public class AcceuilActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = getSharedPreferences("PREFS",MODE_PRIVATE).edit();
                             editor.putString("profileid", FirebaseAuth.getInstance().getUid());
                             editor.apply();
-                            selectedFrangment = new ProfileFragment();
+                            selectedFrangment = null;
+                            startActivity(new Intent(AcceuilActivity.this, ProfileActivity.class));
                             break;
                     }
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.Activities.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Changer Photo"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:id="@+id/buttonEditProfil"/>
+
+
+        <EditText
+            android:id="@+id/profilNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/profilPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Prénom"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/profilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Adresse E-mail"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/profilCarte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Numéro Carte"
+            android:inputType="textPersonName"/>
+
+        <Button
+            android:id="@+id/buttonModifParam"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Modifier paramètre" />
+
+        <Button
+            android:id="@+id/buttonDisconnect"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Déconnexion" />
+
+    </LinearLayout>
+<!--
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</LinearLayout>
