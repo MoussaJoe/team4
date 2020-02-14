@@ -98,13 +98,13 @@ public class ProfileActivity extends AppCompatActivity {
                 //Redirection en fonction du profile de l'utilisateur
                 if (profile.equalsIgnoreCase("Etudiant")){
                     firebaseAuth.signOut();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), AuthActivity.class));
                 }else if (profile.equalsIgnoreCase("Delegue")){
-                    firebaseAuth.signOut();
-                    startActivity(new Intent(getApplicationContext(), DelegueActivity.class));
+                  //  firebaseAuth.signOut();
+                    startActivity(new Intent(getApplicationContext(), AuthActivity.class));
                 }else if (profile.equalsIgnoreCase("Codifiant")){
                     firebaseAuth.signOut();
-                    startActivity(new Intent(getApplicationContext(), AccueilCodifiantActivity.class));
+                    startActivity(new Intent(getApplicationContext(), AuthActivity.class));
                 }
             }
         });
